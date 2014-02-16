@@ -1,0 +1,21 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Player\BattleScore.cs">
+    <Files>
+      <File FileName="Assets\Player\WordSmith.cs" Line="39" Column="71" />
+      <File FileName="Assets\Words\WordCreator.cs" Line="6" Column="23" />
+      <File FileName="Assets\Letters\Letter.cs" Line="23" Column="3" />
+      <File FileName="Assets\Words\Word.cs" Line="37" Column="1" />
+      <File FileName="Assets\Words\WordData.cs" Line="35" Column="3" />
+      <File FileName="Assets\Words\WordBattle.cs" Line="38" Column="23" />
+      <File FileName="Assets\Words\WordCollection.cs" Line="29" Column="17" />
+      <File FileName="Assets\Player\BattleScore.cs" Line="15" Column="10" />
+      <File FileName="Assets\Letters\LetterCollection.cs" Line="81" Column="2" />
+      <File FileName="Assets\Words\ValidWords.cs" Line="11" Column="25" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
