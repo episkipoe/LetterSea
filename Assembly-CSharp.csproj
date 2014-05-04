@@ -57,6 +57,7 @@
      <Compile Include="Assets\Words\WordCollection.cs" />
      <Compile Include="Assets\Words\WordCreator.cs" />
      <Compile Include="Assets\Words\WordData.cs" />
+     <Compile Include="Assets\Words\WordLoader.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">

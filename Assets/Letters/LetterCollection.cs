@@ -3,8 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class LetterCollection {
-	private Dictionary<char,int> letters = new Dictionary<char,int>();
-	private GUIText guiText;
+	private readonly Dictionary<char,int> letters = new Dictionary<char,int>();
+	private readonly GUIText guiText;
 
 	public LetterCollection(GUIText guiText) {
 		this.guiText = guiText;
@@ -47,7 +47,6 @@ public class LetterCollection {
 		if(letters.ContainsKey(l)) {
 			letters[l]++;
 		} else {
-			Debug.Log ("adding " + l);
 			letters[l]=1;
 		}
 		display ();

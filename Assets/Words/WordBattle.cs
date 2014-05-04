@@ -24,10 +24,14 @@ public class WordBattle {
 		opponent = new WordCollection ();
 	}
 
-	public void startBattle(WordData word, Vector3 location) {
+	public void startBattle(Vector3 location, WordData word) {
 		opponent.addWord(word);
-		this.location = location;
-		if (!enabled) {
+		startBattle(location);
+	}
+
+	public void startBattle(Vector3 location) {
+		if (enemiesRemain() && !enabled) {
+			this.location = location;
 			enabled = true;
 			counter = framesPerTurn;
 		}
@@ -36,6 +40,10 @@ public class WordBattle {
 	public void endBattle(bool won) {
 		enabled = false;
 		score.addBattle (won);
+	}
+
+	public bool enemiesRemain() {
+		return !opponent.isEmpty ();
 	}
 
 	private void processTurn() {

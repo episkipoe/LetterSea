@@ -75,4 +75,8 @@ public class WordCollection {
 	public bool isEmpty() {
 		return words.Count == 0;
 	}
+
+	public static void generateWord() {
+		Word newWord = (Word) GameObject.Instantiate (Resources.Load ("Word", typeof(Word)), World.getRandomPoint (), Quaternion.identity);
+	}
 }

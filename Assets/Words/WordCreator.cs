@@ -16,7 +16,7 @@ public class WordCreator {
 	}
 
 	private bool wordComplete() {
-		return stringToEdit.Length > 2;
+		return stringToEdit.Length > 2 && ValidWords.isValidWord(stringToEdit);
 	}
 
 	public void toggle() { 

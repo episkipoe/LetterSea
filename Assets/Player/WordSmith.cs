@@ -1,47 +1,48 @@
 using UnityEngine;
 
 public class WordSmith : MonoBehaviour {
+	//Letters
 	public GUIText letterDisplay;
-	public GUIText wordDisplay;
-	public GUIText scoreDisplay;
-	
-	private WordCollection myWords;
 	private LetterCollection letters;
+
+	//Words
+	public GUIText wordDisplay;
+	private WordCollection myWords;
 	private WordCreator wordCreator;
-	private WordBattle wordBattle;
+
+	//Battle
+	public GUIText scoreDisplay;
 	private BattleScore battleScore;
+	private WordBattle wordBattle;
 
 	void Start() {
-		myWords = new WordCollection(wordDisplay);
-		myWords.addWord(new WordData("CAT"));
-
 		letters = new LetterCollection (letterDisplay);
 
+		myWords = new WordCollection(wordDisplay);
+		myWords.addWord(new WordData("CAT"));
 		wordCreator = new WordCreator (letters, myWords);
+
 		battleScore = new BattleScore (scoreDisplay);
 		wordBattle = new WordBattle (letters, myWords, battleScore);
 
 		for (int i = 0; i < 100; i++) {
-			generateWord();
+			WordCollection.generateWord ();
+		}
+		for (int i = 0; i < 400; i++) {
 			letters.generateLetter();
 		}
 	}
 
-	private void generateWord() {
-		GameObject.Instantiate (Resources.Load ("Word", typeof(Word)), World.getRandomPoint(), Quaternion.identity);
-	}
-	
 	public void encounter(Word word) {
 		if (myWords.isEmpty ()) {
 			return;
 		}
-		//move the word to the battle; if it wins it will be recreated
-		wordBattle.startBattle(word.getData(), gameObject.transform.position);
+
+		//move the word to the battle
+		wordBattle.startBattle(gameObject.transform.position, word.getData());
 		Destroy (word.transform.gameObject);
 	}
-
-	void Update() { }
-
+	
 	void OnGUI() {
 		if (wordBattle.display ()) {
 			return;
@@ -51,8 +52,10 @@ public class WordSmith : MonoBehaviour {
 		} else {
 			wordCreator.display();
 		}
+		if (Event.current.type == EventType.KeyUp && Event.current.keyCode == KeyCode.Space) {
+			wordBattle.startBattle (gameObject.transform.position);
+		}
+
 	}
-
-
-
+	
 }

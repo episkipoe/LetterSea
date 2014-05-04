@@ -3,20 +3,17 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class ValidWords {
-	private static List<string> words;
+	private static readonly List<string> words = new List<string>();
 
 	private static List<string> getWords() {
-		if (words == null) {
-			string fileName = Application.dataPath+"/file.txt";
-			Debug.Log ("file: " + fileName);
-
-			words = new List<string> ();
-			words.Add ("FOOBAR");
-			words.Add ("WORD");
-			words.Add ("CAT");
-			words.Add ("DOG");
+		if (words.Count == 0) {
+			WordLoader.loadWords();
 		}
 		return words;
+	}
+
+	public static void addWord(string word) {
+		words.Add(word.Trim().ToUpper());
 	}
 	
 	public static string getWord() {

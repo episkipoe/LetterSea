@@ -57,6 +57,7 @@
      <Compile Include="Assets\Words\WordCollection.cs" />
      <Compile Include="Assets\Words\WordCreator.cs" />
      <Compile Include="Assets\Words\WordData.cs" />
+     <Compile Include="Assets\Words\WordLoader.cs" />
  <Reference Include="Assembly-UnityScript-firstpass">
  <HintPath>Library\ScriptAssemblies\Assembly-UnityScript-firstpass.dll</HintPath>
  </Reference>

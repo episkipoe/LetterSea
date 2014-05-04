@@ -28,6 +28,14 @@ public class Word : MonoBehaviour {
 	public void setValue(string value) {
 		this.data = new WordData(value);
 		gameObject.GetComponent<TextMesh> ().text = value;
+		BoxCollider collider = gameObject.GetComponent<BoxCollider>();
+
+		//collider.bounds = newWord.GetComponent<TextMesh> ().renderer.bounds;
+		//collider.size.z	 = 5;
+
+		collider.size = new Vector3 (renderer.bounds.size.x * 4, renderer.bounds.size.y * 3, 10.0f);
+		collider.center = new Vector3(-1.0f,0.5f,0.0f);
+
 	}
 
 	public WordData getData() {
